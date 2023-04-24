@@ -14,6 +14,8 @@
 		FB1D11EA29F1732A00189BF3 /* MoveYourMovieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1D11E929F1732A00189BF3 /* MoveYourMovieTests.swift */; };
 		FB1D11F429F1732A00189BF3 /* MoveYourMovieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1D11F329F1732A00189BF3 /* MoveYourMovieUITests.swift */; };
 		FB1D11F629F1732A00189BF3 /* MoveYourMovieUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1D11F529F1732A00189BF3 /* MoveYourMovieUITestsLaunchTests.swift */; };
+		FBA384A529F2B3C700DE34EE /* MoviesNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = FBA384A429F2B3C700DE34EE /* MoviesNetworking */; };
+		FBA384A729F655DA00DE34EE /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA384A629F655DA00DE34EE /* DetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,7 @@
 		FB1D11EF29F1732A00189BF3 /* MoveYourMovieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoveYourMovieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB1D11F329F1732A00189BF3 /* MoveYourMovieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveYourMovieUITests.swift; sourceTree = "<group>"; };
 		FB1D11F529F1732A00189BF3 /* MoveYourMovieUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveYourMovieUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FBA384A629F655DA00DE34EE /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBA384A529F2B3C700DE34EE /* MoviesNetworking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +82,7 @@
 				FB1D11E829F1732A00189BF3 /* MoveYourMovieTests */,
 				FB1D11F229F1732A00189BF3 /* MoveYourMovieUITests */,
 				FB1D11D629F1732900189BF3 /* Products */,
+				FB1D120729F174CE00189BF3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +101,7 @@
 			children = (
 				FB1D11D829F1732900189BF3 /* MoveYourMovieApp.swift */,
 				FB1D11DA29F1732900189BF3 /* ContentView.swift */,
+				FBA384A629F655DA00DE34EE /* DetailsView.swift */,
 				FB1D11DC29F1732A00189BF3 /* Assets.xcassets */,
 				FB1D11DE29F1732A00189BF3 /* Preview Content */,
 			);
@@ -127,6 +133,13 @@
 			path = MoveYourMovieUITests;
 			sourceTree = "<group>";
 		};
+		FB1D120729F174CE00189BF3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +156,9 @@
 			dependencies = (
 			);
 			name = MoveYourMovie;
+			packageProductDependencies = (
+				FBA384A429F2B3C700DE34EE /* MoviesNetworking */,
+			);
 			productName = MoveYourMovie;
 			productReference = FB1D11D529F1732900189BF3 /* MoveYourMovie.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +231,9 @@
 				Base,
 			);
 			mainGroup = FB1D11CC29F1732900189BF3;
+			packageReferences = (
+				FBA384A329F2B3C700DE34EE /* XCRemoteSwiftPackageReference "MoviesNetworking" */,
+			);
 			productRefGroup = FB1D11D629F1732900189BF3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -259,6 +278,7 @@
 			files = (
 				FB1D11DB29F1732900189BF3 /* ContentView.swift in Sources */,
 				FB1D11D929F1732900189BF3 /* MoveYourMovieApp.swift in Sources */,
+				FBA384A729F655DA00DE34EE /* DetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +603,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FBA384A329F2B3C700DE34EE /* XCRemoteSwiftPackageReference "MoviesNetworking" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/iamlaslo/MoviesNetworking.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FBA384A429F2B3C700DE34EE /* MoviesNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FBA384A329F2B3C700DE34EE /* XCRemoteSwiftPackageReference "MoviesNetworking" */;
+			productName = MoviesNetworking;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FB1D11CD29F1732900189BF3 /* Project object */;
 }

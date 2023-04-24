@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "corenetworking",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/iamlaslo/CoreNetworking.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "e9dac2db09c1328a1e40026e2006ce69d151c750"
+      }
+    },
+    {
+      "identity" : "moviesnetworking",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/iamlaslo/MoviesNetworking.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "0caa96f1f34e4ca8c498466eca452ecebe6d403e"
+      }
+    }
+  ],
+  "version" : 2
+}

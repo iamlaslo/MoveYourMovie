@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
+import MoviesNetworking
 
 @main
 struct MoveYourMovieApp: App {
+  
+  private let moviesNetworking = MoviesNetworkingManager()
+  
     var body: some Scene {
         WindowGroup {
             ContentView()
+            .environmentObject(self.moviesNetworking)
         }
     }
 }
