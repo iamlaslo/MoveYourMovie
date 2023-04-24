@@ -34,27 +34,23 @@ struct DetailsView: View {
   
   private var contentView: some View {
     VStack {
-      AsyncImage(url: self.movie.posterUrl()) { image in
-        image
-          .resizable()
-          .aspectRatio(contentMode: .fit)
-      } placeholder: {
-        ProgressView()
-      }
-      .frame(height: 250)
-      .clipShape(RoundedRectangle(cornerRadius: 20))
-      .padding()
+      self.posterView
       
       Text(self.movie.title)
         .font(.title)
         .bold()
         .multilineTextAlignment(.center)
-        .padding(.vertical)
+        .padding(.vertical, 2)
       
       if let movieDetails {
         VStack(spacing: 20) {
           Text(movieDetails.tagline)
             .font(.headline)
+          
+          VStack {
+            Text("Release: \(movieDetails.releaseDate.asFormattedDate())")
+            Text("Runtime: \(movieDetails.runtime.minutesToFormattedTime())")
+          }
           
           Text(movieDetails.overview)
         }
@@ -62,6 +58,19 @@ struct DetailsView: View {
       
       Spacer()
     }
+    .padding()
+  }
+  
+  private var posterView: some View {
+    AsyncImage(url: self.movie.posterUrl()) { image in
+      image
+        .resizable()
+        .aspectRatio(contentMode: .fit)
+    } placeholder: {
+      ProgressView()
+    }
+    .frame(height: 250)
+    .clipShape(RoundedRectangle(cornerRadius: 20))
     .padding()
   }
   
@@ -76,6 +85,28 @@ struct DetailsView: View {
     case .failure(let failure):
       print(failure.description)
     }
+  }
+}
+
+extension Int {
+  
+  func minutesToFormattedTime() -> String {
+    let hours = self / 60
+    let minutes: Int = self % 60
+    
+    return hours != 0 ? "\(hours)h \(minutes)m" : "\(minutes)m"
+  }
+}
+
+extension String {
+  
+  func asFormattedDate() -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "YYYY-mm-dd"
+    
+    let date = dateFormatter.date(from: self)
+    
+    return date?.formatted(date: .abbreviated, time: .omitted) ?? "TBA"
   }
 }
 

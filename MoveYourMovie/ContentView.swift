@@ -57,9 +57,12 @@ struct ContentView: View {
             .resizable()
             .aspectRatio(contentMode: .fit)
         } placeholder: {
-          ProgressView()
+          RoundedRectangle(cornerRadius: 20)
+            .foregroundColor(.gray)
+            .frame(width: 120, height: 175)
         }
         .frame(height: 175)
+        .clipShape(RoundedRectangle(cornerRadius: 20))
       }
       
       Spacer()
